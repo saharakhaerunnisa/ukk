@@ -188,6 +188,16 @@
 
         <form method="POST">
             <div class="form-group">
+                <label for="IDBuku">
+                    <span class="input-icon">🔖</span>
+                    ID Penerbit
+                    <span class="required">*</span>
+                </label>
+                <input type="text" id="IDPenerbit" name="IDPenerbit" placeholder="Masukan ID Penerbit" required>
+                <p class="info-text">Contoh: SP001</p>
+            </div>
+
+            <div class="form-group">
                 <label for="nama">
                     <span class="input-icon">🏷️</span>
                     Nama Penerbit
@@ -239,13 +249,14 @@
     </div>
     <?php
     if(isset($_POST['simpan'])){
+        $IDPenerbit = $_POST['IDPenerbit'];
         $nama   = $_POST['nama'];
         $alamat = $_POST['alamat'];
         $kota   = $_POST['kota'];
         $telp   = $_POST['telp'];
 
-        $query = mysqli_query($koneksi, "INSERT INTO penerbit(namaPenerbit, alamat, kota, noTelp)
-                                         VALUES('$nama', '$alamat', '$kota', '$telp')");
+        $query = mysqli_query($koneksi, "INSERT INTO penerbit(IDPenerbit, namaPenerbit, alamat, kota, noTelp)
+                                         VALUES('$IDPenerbit', '$nama', '$alamat', '$kota', '$telp')");
 
         if($query){
             echo "<script>alert('Berhasil ditambahkan'); window.location='admin.php';</script>";

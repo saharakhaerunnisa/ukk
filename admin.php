@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 
-// Hapus buku
+
 if(isset($_GET['hapus'])){
     $id = $_GET['hapus'];
     mysqli_query($koneksi, "DELETE FROM buku WHERE IDBuku='$id'");
@@ -9,12 +9,10 @@ if(isset($_GET['hapus'])){
     exit;
 }
 
-// Hapus penerbit - ini seharusnya di file terpisah (hapus_penerbit.php)
-// Kode ini tidak akan dieksekusi jika ada redirect di atas
 if(isset($_GET['id']) && !isset($_GET['hapus'])){
     $id = $_GET['id'];
     mysqli_query($koneksi, "DELETE FROM penerbit WHERE IDPenerbit='$id'");
-    echo "<script>alert('Berhasil dihapus'); window.location='admin.php';</script>";
+    header("Location: admin.php");
     exit;
 }
 ?>
@@ -348,7 +346,7 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
                             <td><?= htmlspecialchars($d['noTelp']); ?></td>
                             <td class="action-links">
                                 <a href="edit_penerbit.php?id=<?= $d['IDPenerbit']; ?>" class="edit-btn">✏️ Edit</a>
-                                <a href="hapus_penerbit.php?id=<?= $d['IDPenerbit']; ?>" class="delete-btn" onclick="return confirm('Yakin ingin menghapus penerbit ini?')">🗑️ Hapus</a>
+                                <a href="admin.php?id=<?= $d['IDPenerbit']; ?>" class="delete-btn" onclick="return confirm('Yakin ingin menghapus penerbit ini?')">🗑️ Hapus</a>
                             </td>
                         </tr>
                         <?php 

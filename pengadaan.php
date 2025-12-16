@@ -63,7 +63,7 @@ $data = mysqli_fetch_assoc($result);
 
         /* Alert Box */
         .alert-box {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background:  #f5576c;
             color: white;
             padding: 20px;
             border-radius: 12px;
@@ -125,13 +125,13 @@ $data = mysqli_fetch_assoc($result);
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background:  #667eea ;
         }
 
         .book-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-            border-color: #667eea;
+            border-color: #586eccff;
         }
 
         .book-card-header {
@@ -225,7 +225,7 @@ $data = mysqli_fetch_assoc($result);
         .btn {
             display: inline-block;
             padding: 14px 35px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background:  #667eea ;
             color: white;
             text-decoration: none;
             border-radius: 25px;

@@ -1,14 +1,12 @@
 <?php
 include "koneksi.php";
 
-// Ambil ID buku dari URL
 $IDBuku = $_GET['id'];
 
 $sql = "SELECT * FROM buku WHERE IDBuku='$IDBuku'";
 $result = mysqli_query($koneksi, $sql);
 $data = mysqli_fetch_assoc($result);
 
-// Jika tombol update ditekan
 if (isset($_POST['update'])) {
 
     $kategori   = $_POST['kategori'];

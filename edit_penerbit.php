@@ -203,13 +203,26 @@ $d = mysqli_fetch_array($data);
         </div>
 
         <form method="POST">
+
+            <input type="hidden" name="id_lama" value="<?= $d['IDPenerbit'] ?>">
+
+            <div class="form-group">
+                <label for="IDBuku">
+                    <span class="input-icon">🔖</span>
+                    ID Penerbit
+                    <span class="required">*</span>
+                </label>
+                <input type="text" id="IDPenerbit" name="IDPenerbit" value="<?= $d['IDPenerbit'] ?>" required>
+                <p class="info-text">Contoh: SP001</p>
+            </div>
+
             <div class="form-group">
                 <label for="nama">
                     <span class="input-icon">🏷️</span>
                     Nama Penerbit
                     <span class="required">*</span>
                 </label>
-                <input type="text" id="nama" name="nama" value="<?= $data['namaPenerbit'] ?>" required>
+                <input type="text" id="nama" name="nama" value="<?= $d['namaPenerbit'] ?>" required>
                 <p class="info-text">Contoh: Gramedia, Erlangga, Mizan</p>
             </div>
 
@@ -219,7 +232,7 @@ $d = mysqli_fetch_array($data);
                     Alamat
                     <span class="required">*</span>
                 </label>
-                <input type="text" id="alamat" name="alamat" value="<?= $data['alamat'] ?>" required>
+                <input type="text" id="alamat" name="alamat" value="<?= $d['alamat'] ?>" required>
                 <p class="info-text">Masukkan alamat lengkap kantor penerbit</p>
             </div>
 
@@ -229,7 +242,7 @@ $d = mysqli_fetch_array($data);
                     Kota
                     <span class="required">*</span>
                 </label>
-                <input type="text" id="kota" name="kota" value="<?= $data['kota'] ?>" required>
+                <input type="text" id="kota" name="kota" value="<?= $d['kota'] ?>" required>
                 <p class="info-text">Contoh: Jakarta, Bandung, Surabaya</p>
             </div>
 
@@ -239,12 +252,12 @@ $d = mysqli_fetch_array($data);
                     No Telp
                     <span class="required">*</span>
                 </label>
-                <input type="text" id="telp" name="telp" value="<?= $data['noTelp'] ?>" required>
+                <input type="text" id="telp" name="telp" value="<?= $d['noTelp'] ?>" required>
                 <p class="info-text">Contoh: 021-12345678 atau 081234567890</p>
             </div>
 
             <div class="button-group">
-                <button type="submit" name="simpan" class="btn btn-submit">
+                <button type="submit" name="update" class="btn btn-submit">
                     ✅ Edit Data
                 </button>
                 <a href="admin.php" class="btn btn-back">
@@ -255,26 +268,30 @@ $d = mysqli_fetch_array($data);
     </div>
 
 <?php
-if(isset($_POST['update'])){
-    $nama   = $_POST['nama'];
-    $alamat = $_POST['alamat'];
-    $kota   = $_POST['kota'];
-    $telp   = $_POST['telp'];
+    if (isset($_POST['update'])) {
+        $id_lama    = $_POST['id_lama'];      
+        $id_baru    = $_POST['IDPenerbit'];   
+        $nama       = $_POST['nama'];
+        $alamat     = $_POST['alamat'];
+        $kota       = $_POST['kota'];
+        $telp       = $_POST['telp'];
 
-    $query = mysqli_query($koneksi, 
-        "UPDATE penerbit SET 
-            namaPenerbit='$nama',
-            alamat='$alamat',
-            kota='$kota',
-            noTelp='$telp'
-        WHERE IDPenerbit='$id'");
+        $query = mysqli_query($koneksi, "
+            UPDATE penerbit SET
+                IDPenerbit   = '$id_baru',
+                namaPenerbit = '$nama',
+                alamat       = '$alamat',
+                kota         = '$kota',
+                noTelp       = '$telp'
+            WHERE IDPenerbit = '$id_lama'
+        ");
 
-    if($query){
-        echo "<script>alert('Berhasil diupdate'); window.location='penerbit.php';</script>";
-    } else {
-        echo "Gagal: " . mysqli_error($koneksi);
+        if ($query) {
+            echo "<script>alert('Berhasil diupdate'); window.location='admin.php';</script>";
+        } else {
+            echo "Gagal: " . mysqli_error($koneksi);
+        }
     }
-}
 ?>
 
 </body>

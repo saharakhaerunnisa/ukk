@@ -283,7 +283,6 @@ if (isset($_POST['update'])) {
                     <span class="required">*</span>
                 </label>
                 <select id="penerbitID" name="penerbitID" required>
-                    <option value="">-- Pilih Penerbit --</option>
                     <?php
                     $result = mysqli_query($koneksi, "SELECT * FROM penerbit ORDER BY namaPenerbit ASC");
                     while ($p = mysqli_fetch_assoc($result)) {
@@ -295,7 +294,7 @@ if (isset($_POST['update'])) {
             </div>
 
             <div class="button-group">
-                <button type="submit" name="submit" class="btn btn-submit">
+                <button type="submit" name="update" class="btn btn-submit">
                     ✅ Edit Data
                 </button>
                 <a href="admin.php" class="btn btn-back">

@@ -50,7 +50,7 @@ $data = mysqli_fetch_assoc($result);
             color: #333;
             font-size: 36px;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #667eea;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -145,7 +145,7 @@ $data = mysqli_fetch_assoc($result);
 
         .book-icon {
             font-size: 32px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #764ba2;
             padding: 12px;
             border-radius: 10px;
             display: flex;
@@ -203,10 +203,8 @@ $data = mysqli_fetch_assoc($result);
             border-radius: 20px;
             font-weight: 700;
             font-size: 14px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: #f5576c;
             color: white;
-            box-shadow: 0 3px 10px rgba(245, 87, 108, 0.3);
-            animation: glow 2s infinite;
         }
 
         @keyframes glow {

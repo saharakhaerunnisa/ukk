@@ -322,30 +322,27 @@ $data = mysqli_fetch_assoc($result);
 
         <div class="books-container">
             <?php
-            // Simulasi data - ganti dengan query database Anda
-            // include "koneksi.php";
-            // $query = "SELECT b.*, p.namaPenerbit FROM buku b 
-            //           JOIN penerbit p ON b.penerbitID = p.IDPenerbit 
-            //           ORDER BY b.stock ASC LIMIT 10";
-            // $result = mysqli_query($koneksi, $query);
-            
-            // Contoh data untuk preview
-            $books = [
-                [
-                    'namaBuku' => 'Bisnis Online',
-                    'namaPenerbit' => 'Penerbit Informatika',
-                    'stock' => 9
-                ]
-            ];
-            
+            $query = "SELECT b.namaBuku, b.stock, p.namaPenerbit
+                    FROM buku b
+                    JOIN penerbit p ON b.penerbitID = p.IDPenerbit
+                    ORDER BY b.stock ASC
+                    LIMIT 3";
+
+            $result = mysqli_query($koneksi, $query);
+
+            $books = [];
+            while ($row = mysqli_fetch_assoc($result)) {
+                $books[] = $row;
+            }
+
             if(empty($books)) {
-                echo '<div class="empty-state">
-                        <div class="empty-state-icon">📚</div>
-                        <h3>Tidak Ada Buku yang Perlu Diadakan</h3>
-                        <p>Semua buku memiliki stok yang cukup</p>
-                      </div>';
-            } else {
-                foreach($books as $index => $book) {
+                    echo '<div class="empty-state">
+                            <div class="empty-state-icon">📚</div>
+                            <h3>Tidak Ada Buku yang Perlu Diadakan</h3>
+                            <p>Semua buku memiliki stok yang cukup</p>
+                        </div>';
+                } else {
+                    foreach($books as $index => $book) {
             ?>
             <div class="book-card">
                 <div class="book-card-header">

@@ -264,13 +264,11 @@ $dataPenerbit = mysqli_query($koneksi, $sqlPenerbit);
 <body>
     <div class="container">
         <div class="navigation">
-            <a href="admin.php">🔧 Halaman Admin</a> |
-            <a href="pengadaan.php">📦 Pengadaan Buku</a>
+            <a href="admin.php">🔧 Halaman Admin</a> 
         </div>
 
         <div class="section">
             <h2>📚 Daftar Buku</h2>
-
             <form method="GET" class="search-form">
                 <input type="text" name="cari_buku" placeholder="🔍 Cari nama buku..." value="<?= htmlspecialchars($keywordBuku) ?>">
                 <button type="submit">Cari</button>

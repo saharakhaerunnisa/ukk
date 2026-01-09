@@ -1,7 +1,6 @@
 <?php
 include "koneksi.php";
 
-
 if(isset($_GET['hapus'])){
     $id = $_GET['hapus'];
     mysqli_query($koneksi, "DELETE FROM buku WHERE IDBuku='$id'");
@@ -31,7 +30,7 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: sans-serif;
             background: #d6d7d9ff;;
             min-height: 100vh;
             padding: 20px;
@@ -173,7 +172,7 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
         }
 
         .button-group {
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         .page-header {
@@ -247,12 +246,11 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             <p>Kelola data buku dan penerbit</p>
         </div>
 
-        <!-- Kelola Data Buku -->
         <div class="section">
             <h2>📚 Kelola Data Buku</h2>
-            
             <div class="button-group">
-                <a href="tambah_buku.php" class="btn btn-add">+ Tambah Buku Baru</a>
+                <a href="tambah_buku.php" class="btn btn-add">+ Tambah Buku Baru</a> 
+                <a href="pengadaan.php" class="btn btn-back">📦 Pengadaan Buku</a>
             </div>
 
             <div class="table-wrapper">
@@ -302,7 +300,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             </div>
         </div>
 
-        <!-- Data Penerbit -->
         <div class="section">
             <h2>🏢 Data Penerbit</h2>
             

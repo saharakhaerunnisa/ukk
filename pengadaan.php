@@ -39,7 +39,6 @@ $data = mysqli_fetch_assoc($result);
             padding: 40px;
         }
 
-        /* Page Header */
         .page-header {
             text-align: center;
             margin-bottom: 40px;
@@ -61,7 +60,6 @@ $data = mysqli_fetch_assoc($result);
             font-size: 16px;
         }
 
-        /* Alert Box */
         .alert-box {
             background:  #f5576c;
             color: white;
@@ -98,7 +96,6 @@ $data = mysqli_fetch_assoc($result);
             opacity: 0.9;
         }
 
-        /* Card Container */
         .books-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -106,7 +103,6 @@ $data = mysqli_fetch_assoc($result);
             margin: 30px 0;
         }
 
-        /* Book Card */
         .book-card {
             background: white;
             border-radius: 12px;
@@ -196,7 +192,6 @@ $data = mysqli_fetch_assoc($result);
             font-weight: 500;
         }
 
-        /* Stock Badge */
         .stock-badge {
             display: inline-block;
             padding: 6px 16px;
@@ -212,7 +207,6 @@ $data = mysqli_fetch_assoc($result);
             50% { box-shadow: 0 5px 20px rgba(245, 87, 108, 0.5); }
         }
 
-        /* Navigation */
         .navigation {
             margin-top: 40px;
             padding-top: 30px;
@@ -238,7 +232,6 @@ $data = mysqli_fetch_assoc($result);
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
-        /* Empty State */
         .empty-state {
             text-align: center;
             padding: 60px 20px;
@@ -262,7 +255,6 @@ $data = mysqli_fetch_assoc($result);
             font-size: 16px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 25px;
@@ -292,7 +284,6 @@ $data = mysqli_fetch_assoc($result);
             }
         }
 
-        /* Loading Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;

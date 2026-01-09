@@ -55,7 +55,6 @@ $d = mysqli_fetch_array($data);
             font-size: 14px;
         }
 
-        /* Form Styles */
         .form-group {
             margin-bottom: 20px;
         }
@@ -99,7 +98,6 @@ $d = mysqli_fetch_array($data);
             border-color: #b8c5f2;
         }
 
-        /* Button Styles */
         .button-group {
             display: flex;
             gap: 10px;
@@ -140,25 +138,21 @@ $d = mysqli_fetch_array($data);
             box-shadow: 0 5px 15px rgba(25, 33, 125, 0.4);
         }
 
-        /* Required indicator */
         .required {
             color: #f44336;
             margin-left: 3px;
         }
 
-        /* Info text */
         .info-text {
             font-size: 12px;
             color: #999;
             margin-top: 5px;
         }
 
-        /* Input Icons */
         .input-icon {
             margin-right: 5px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 25px;
@@ -177,7 +171,6 @@ $d = mysqli_fetch_array($data);
             }
         }
 
-        /* Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;

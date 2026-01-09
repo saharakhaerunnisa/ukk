@@ -55,7 +55,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             display: inline-block;
         }
 
-        /* Table Styles */
         .table-wrapper {
             overflow-x: auto;
             margin: 25px 0;
@@ -95,7 +94,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             border-bottom: none;
         }
 
-        /* Action Links */
         .action-links a {
             text-decoration: none;
             padding: 6px 12px;
@@ -129,7 +127,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             box-shadow: 0 3px 10px rgba(244, 67, 54, 0.3);
         }
 
-        /* Buttons and Links */
         .btn {
             display: inline-block;
             padding: 10px 25px;
@@ -164,7 +161,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             box-shadow: 0 5px 15px rgba(25, 33, 125, 0.4);
         }
 
-        /* Navigation */
         .navigation {
             margin-top: 30px;
             padding-top: 20px;
@@ -172,7 +168,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             text-align: center;
         }
 
-        /* Section Spacing */
         .section {
             margin: 40px 0;
         }
@@ -181,7 +176,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             margin: 20px 0;
         }
 
-        /* Header with icon */
         .page-header {
             text-align: center;
             margin-bottom: 40px;
@@ -198,7 +192,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             font-size: 16px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -226,7 +219,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             }
         }
 
-        /* Empty State */
         .empty-state {
             text-align: center;
             padding: 40px;
@@ -234,7 +226,6 @@ if(isset($_GET['id']) && !isset($_GET['hapus'])){
             font-style: italic;
         }
 
-        /* Alert Style */
         .alert {
             padding: 15px;
             margin: 20px 0;

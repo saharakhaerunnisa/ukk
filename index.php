@@ -1,19 +1,16 @@
 <?php
 include "koneksi.php";
 
-// search buku
 $keywordBuku = "";
 if(isset($_GET['cari_buku'])) {
     $keywordBuku = $_GET['cari_buku'];
 }
 
-// search penerbit
 $keywordPenerbit = "";
 if(isset($_GET['cari_penerbit'])) {
     $keywordPenerbit = $_GET['cari_penerbit'];
 }
 
-// Query buku
 $sql = "SELECT b.*, p.namaPenerbit 
         FROM buku b
         JOIN penerbit p ON b.penerbitID = p.IDPenerbit
@@ -21,7 +18,6 @@ $sql = "SELECT b.*, p.namaPenerbit
         ORDER BY b.IDBuku ASC";
 $result = mysqli_query($koneksi, $sql);
 
-// Query penerbit
 $sqlPenerbit = "SELECT * FROM penerbit 
                 WHERE namaPenerbit LIKE '%$keywordPenerbit%' 
                 OR alamat LIKE '%$keywordPenerbit%'
@@ -68,7 +64,6 @@ $dataPenerbit = mysqli_query($koneksi, $sqlPenerbit);
             display: inline-block;
         }
 
-        /* Search Form */
         .search-form {
             margin: 25px 0;
             display: flex;
@@ -129,7 +124,6 @@ $dataPenerbit = mysqli_query($koneksi, $sqlPenerbit);
             box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
         }
 
-        /* Table Styles */
         .table-wrapper {
             overflow-x: auto;
             margin: 25px 0;
@@ -169,7 +163,6 @@ $dataPenerbit = mysqli_query($koneksi, $sqlPenerbit);
             border-bottom: none;
         }
 
-        /* Buttons and Links */
         .btn {
             display: inline-block;
             padding: 10px 25px;
@@ -196,7 +189,6 @@ $dataPenerbit = mysqli_query($koneksi, $sqlPenerbit);
             box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
         }
 
-        /* Navigation */
         .navigation {
             margin-bottom: 30px;
             padding-bottom: 20px;
@@ -218,12 +210,10 @@ $dataPenerbit = mysqli_query($koneksi, $sqlPenerbit);
             text-decoration: underline;
         }
 
-        /* Section Spacing */
         .section {
             margin: 40px 0;
         }
 
-        /* Search Info */
         .search-info {
             background: #e3f2fd;
             padding: 12px 20px;
@@ -234,7 +224,6 @@ $dataPenerbit = mysqli_query($koneksi, $sqlPenerbit);
             display: inline-block;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -264,7 +253,6 @@ $dataPenerbit = mysqli_query($koneksi, $sqlPenerbit);
             }
         }
 
-        /* Empty State */
         .empty-state {
             text-align: center;
             padding: 40px;
